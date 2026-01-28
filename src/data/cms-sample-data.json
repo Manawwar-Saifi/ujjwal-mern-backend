@@ -1,0 +1,378 @@
+{
+  "treatmentPages": {
+    "rootCanalTreatment": {
+      "title": "Root Canal Treatment",
+      "slug": "root-canal-treatment-rct",
+      "shortDescription": "Save your natural tooth with painless RCT procedure",
+      "meta": {
+        "title": "Root Canal Treatment (RCT) in Hapur | Ujjwal Dental Clinic",
+        "description": "Expert root canal treatment with modern techniques. Painless RCT procedure to save your natural tooth. Book appointment today!",
+        "keywords": ["root canal", "RCT", "tooth pain", "endodontic treatment", "dental treatment hapur"],
+        "ogImage": "https://res.cloudinary.com/demo/image/upload/rct-hero.jpg"
+      },
+      "hero": {
+        "heading": "Root Canal Treatment",
+        "subheading": "Painless procedure to save your natural tooth",
+        "image": "https://res.cloudinary.com/demo/image/upload/rct-hero.jpg",
+        "ctaText": "Book Appointment",
+        "ctaLink": "#appointment-form"
+      },
+      "overview": {
+        "title": "What is Root Canal Treatment?",
+        "content": "<p>Root canal treatment (RCT) is a dental procedure used to treat infection at the center of a tooth. The treatment involves removing the damaged or infected pulp, cleaning and disinfecting the inside of the tooth, then filling and sealing it.</p><p>At Ujjwal Dental Clinic, we use the latest technology and techniques to ensure your root canal procedure is as comfortable and painless as possible.</p>"
+      },
+      "sections": [
+        {
+          "title": "Why Do You Need RCT?",
+          "type": "list",
+          "items": [
+            "Severe tooth decay reaching the pulp",
+            "Cracked or chipped tooth exposing the pulp",
+            "Repeated dental procedures on the same tooth",
+            "Injury to the tooth (even without visible damage)",
+            "Deep cavity that has infected the nerve"
+          ],
+          "order": 1
+        },
+        {
+          "title": "Symptoms Indicating You Need RCT",
+          "type": "list",
+          "items": [
+            "Severe toothache when chewing or applying pressure",
+            "Prolonged sensitivity to hot or cold temperatures",
+            "Darkening or discoloration of the tooth",
+            "Swelling and tenderness in nearby gums",
+            "Persistent pimple on the gums",
+            "Pain that wakes you up at night"
+          ],
+          "order": 2
+        },
+        {
+          "title": "Benefits of Root Canal Treatment",
+          "type": "list",
+          "items": [
+            "Saves your natural tooth",
+            "Eliminates pain and infection",
+            "Prevents spread of infection to other teeth",
+            "Restores normal chewing function",
+            "Maintains natural appearance",
+            "Cost-effective compared to extraction and implant"
+          ],
+          "order": 3
+        },
+        {
+          "title": "RCT vs Tooth Extraction",
+          "type": "table",
+          "tableData": {
+            "headers": ["Factor", "Root Canal Treatment", "Tooth Extraction"],
+            "rows": [
+              ["Preserves Natural Tooth", "Yes", "No"],
+              ["Procedure Time", "1-2 visits", "Single visit"],
+              ["Recovery Time", "Few days", "1-2 weeks"],
+              ["Long-term Cost", "Lower (one-time)", "Higher (implant needed)"],
+              ["Chewing Ability", "Normal", "Reduced until replacement"],
+              ["Adjacent Teeth", "Protected", "May shift over time"]
+            ]
+          },
+          "order": 4
+        }
+      ],
+      "procedureSteps": [
+        {
+          "stepNumber": 1,
+          "title": "X-Ray & Diagnosis",
+          "description": "We take a detailed X-ray to examine the shape of root canals and determine if there are any signs of infection in the surrounding bone.",
+          "duration": "10-15 minutes"
+        },
+        {
+          "stepNumber": 2,
+          "title": "Local Anesthesia",
+          "description": "The area around the tooth is numbed using local anesthesia to ensure a completely pain-free experience during the procedure.",
+          "duration": "5 minutes"
+        },
+        {
+          "stepNumber": 3,
+          "title": "Pulp Removal",
+          "description": "An access hole is drilled into the tooth. The diseased pulp, bacteria, and debris are removed using specialized instruments.",
+          "duration": "20-30 minutes"
+        },
+        {
+          "stepNumber": 4,
+          "title": "Cleaning & Shaping",
+          "description": "The root canals are cleaned, enlarged, and shaped using tiny files. This creates space for the filling material.",
+          "duration": "15-20 minutes"
+        },
+        {
+          "stepNumber": 5,
+          "title": "Filling & Sealing",
+          "description": "The cleaned canals are filled with a rubber-like material called gutta-percha and sealed with adhesive cement.",
+          "duration": "15 minutes"
+        },
+        {
+          "stepNumber": 6,
+          "title": "Crown Placement",
+          "description": "A crown or cap is placed over the tooth to protect it and restore its full function. This may require a separate appointment.",
+          "duration": "Separate visit"
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is root canal treatment painful?",
+          "answer": "With modern anesthesia and techniques, root canal treatment is virtually painless. Most patients report the procedure is no more uncomfortable than getting a filling. You may experience some mild soreness for a few days after the procedure, which can be managed with over-the-counter pain medication.",
+          "order": 1
+        },
+        {
+          "question": "How long does a root canal take?",
+          "answer": "A typical root canal procedure takes 1-2 hours per visit. Simple cases may be completed in one visit, while complex cases (like molars with multiple canals) may require 2-3 visits.",
+          "order": 2
+        },
+        {
+          "question": "How long does a root canal treated tooth last?",
+          "answer": "With proper care and a good quality crown, a root canal treated tooth can last a lifetime. It's important to maintain good oral hygiene and visit your dentist regularly for check-ups.",
+          "order": 3
+        },
+        {
+          "question": "What should I expect after the procedure?",
+          "answer": "After the procedure, you may experience some sensitivity or mild discomfort for a few days. Avoid chewing on the treated tooth until it's fully restored with a crown. Take prescribed medications as directed and maintain good oral hygiene.",
+          "order": 4
+        },
+        {
+          "question": "Is root canal better than extraction?",
+          "answer": "In most cases, saving your natural tooth through root canal treatment is the better option. Natural teeth are stronger, more efficient for chewing, and help maintain your jawbone. Extraction often leads to additional costs for implants or bridges.",
+          "order": 5
+        }
+      ],
+      "pricing": {
+        "startingPrice": 3000,
+        "maxPrice": 15000,
+        "currency": "INR",
+        "factors": [
+          "Tooth location (front teeth vs molars)",
+          "Number of root canals",
+          "Complexity of the case",
+          "Whether retreatment is needed",
+          "Type of crown selected"
+        ],
+        "note": "Final cost will be determined after examination. We offer flexible payment options."
+      },
+      "isPublished": true
+    },
+    "teethWhitening": {
+      "title": "Teeth Whitening",
+      "slug": "teeth-whitening",
+      "shortDescription": "Get a brighter, whiter smile with professional teeth whitening",
+      "meta": {
+        "title": "Teeth Whitening in Hapur | Professional Dental Whitening",
+        "description": "Professional teeth whitening treatment for a brighter smile. Safe and effective whitening at Ujjwal Dental Clinic.",
+        "keywords": ["teeth whitening", "dental whitening", "bright smile", "cosmetic dentistry"]
+      },
+      "hero": {
+        "heading": "Teeth Whitening",
+        "subheading": "Achieve a brighter, more confident smile",
+        "ctaText": "Book Consultation"
+      },
+      "overview": {
+        "title": "What is Professional Teeth Whitening?",
+        "content": "<p>Professional teeth whitening is a cosmetic dental procedure that lightens teeth and removes stains and discoloration. It's one of the most popular cosmetic dental procedures because it can significantly improve how your teeth look.</p>"
+      },
+      "sections": [
+        {
+          "title": "Causes of Tooth Discoloration",
+          "type": "list",
+          "items": [
+            "Coffee, tea, and red wine consumption",
+            "Tobacco use (smoking or chewing)",
+            "Poor dental hygiene",
+            "Aging - enamel wears down over time",
+            "Certain medications",
+            "Fluorosis (excess fluoride during tooth development)"
+          ],
+          "order": 1
+        },
+        {
+          "title": "Our Whitening Methods",
+          "type": "table",
+          "tableData": {
+            "headers": ["Method", "Duration", "Results", "Price Range"],
+            "rows": [
+              ["In-Office Whitening", "1 hour", "Immediate (5-8 shades)", "₹8,000 - ₹15,000"],
+              ["Take-Home Trays", "2 weeks", "Gradual (3-5 shades)", "₹5,000 - ₹8,000"],
+              ["Combination Treatment", "Varies", "Best results", "₹12,000 - ₹20,000"]
+            ]
+          },
+          "order": 2
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is teeth whitening safe?",
+          "answer": "Yes, professional teeth whitening is safe when performed by a qualified dentist. We use approved whitening agents and take precautions to protect your gums and oral tissues.",
+          "order": 1
+        },
+        {
+          "question": "How long do whitening results last?",
+          "answer": "Results typically last 1-3 years depending on your diet and oral habits. Avoiding staining foods and drinks, and maintaining good oral hygiene helps prolong results.",
+          "order": 2
+        }
+      ],
+      "pricing": {
+        "startingPrice": 5000,
+        "maxPrice": 20000,
+        "currency": "INR",
+        "factors": [
+          "Whitening method chosen",
+          "Degree of discoloration",
+          "Number of sessions needed"
+        ]
+      },
+      "isPublished": true
+    },
+    "dentalImplants": {
+      "title": "Dental Implants",
+      "slug": "dental-implants",
+      "shortDescription": "Permanent tooth replacement with dental implants",
+      "meta": {
+        "title": "Dental Implants in Hapur | Permanent Tooth Replacement",
+        "description": "High-quality dental implants for permanent tooth replacement. Natural-looking results at Ujjwal Dental Clinic.",
+        "keywords": ["dental implants", "tooth implant", "permanent teeth", "missing teeth"]
+      },
+      "hero": {
+        "heading": "Dental Implants",
+        "subheading": "The gold standard for replacing missing teeth",
+        "ctaText": "Get Free Consultation"
+      },
+      "overview": {
+        "title": "What are Dental Implants?",
+        "content": "<p>Dental implants are titanium posts that are surgically placed into the jawbone to serve as artificial tooth roots. Once in place, they provide a stable foundation for replacement teeth that look, feel, and function like natural teeth.</p>"
+      },
+      "pricing": {
+        "startingPrice": 25000,
+        "maxPrice": 60000,
+        "currency": "INR",
+        "factors": [
+          "Type of implant",
+          "Number of implants needed",
+          "Bone grafting requirements",
+          "Crown material"
+        ]
+      },
+      "isPublished": false
+    }
+  },
+  "enquiries": {
+    "sample1": {
+      "name": "Rahul Sharma",
+      "phone": "9876543210",
+      "email": "rahul.sharma@example.com",
+      "treatmentName": "Root Canal Treatment",
+      "message": "I have severe tooth pain since 3 days. The pain increases at night. Please suggest the earliest available appointment.",
+      "preferredDate": "2026-01-28",
+      "preferredTime": "Morning",
+      "source": {
+        "page": "root-canal-treatment-rct",
+        "utm_source": "google",
+        "utm_medium": "cpc",
+        "utm_campaign": "dental-ads-jan",
+        "device": "mobile"
+      }
+    },
+    "sample2": {
+      "name": "Priya Verma",
+      "phone": "8765432109",
+      "email": "priya.v@example.com",
+      "treatmentName": "Teeth Whitening",
+      "message": "Interested in teeth whitening before my wedding next month. What are the options?",
+      "preferredTime": "Evening",
+      "source": {
+        "page": "teeth-whitening",
+        "utm_source": "facebook",
+        "utm_medium": "social",
+        "device": "mobile"
+      }
+    },
+    "sample3": {
+      "name": "Amit Kumar",
+      "phone": "7654321098",
+      "treatmentName": "Dental Implants",
+      "message": "I lost my front tooth in an accident. Want to know about implant options and cost.",
+      "source": {
+        "page": "dental-implants",
+        "referrer": "https://www.google.com",
+        "device": "desktop"
+      }
+    }
+  },
+  "postmanRequests": {
+    "createTreatmentPage": {
+      "method": "POST",
+      "url": "http://localhost:5000/api/cms/treatments",
+      "headers": {
+        "Authorization": "Bearer {{admin_token}}",
+        "Content-Type": "application/json"
+      },
+      "note": "Copy the rootCanalTreatment object from treatmentPages above as body"
+    },
+    "addSection": {
+      "method": "POST",
+      "url": "http://localhost:5000/api/cms/treatments/{{treatment_page_id}}/sections",
+      "headers": {
+        "Authorization": "Bearer {{admin_token}}",
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "title": "Aftercare Instructions",
+        "type": "list",
+        "items": [
+          "Avoid eating until numbness wears off",
+          "Take prescribed medications",
+          "Avoid hard or crunchy foods for 24 hours",
+          "Maintain good oral hygiene",
+          "Contact us if you experience severe pain or swelling"
+        ]
+      }
+    },
+    "addFaq": {
+      "method": "POST",
+      "url": "http://localhost:5000/api/cms/treatments/{{treatment_page_id}}/faqs",
+      "headers": {
+        "Authorization": "Bearer {{admin_token}}",
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "question": "Can I eat after root canal?",
+        "answer": "Wait until the numbness wears off (usually 2-4 hours) before eating. Start with soft foods and avoid chewing on the treated side until the crown is placed."
+      }
+    },
+    "submitEnquiry": {
+      "method": "POST",
+      "url": "http://localhost:5000/api/enquiries",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "name": "Test User",
+        "phone": "9999888877",
+        "email": "test@example.com",
+        "treatmentName": "Root Canal Treatment",
+        "message": "I need root canal treatment. Please call me.",
+        "source": {
+          "page": "root-canal-treatment-rct",
+          "utm_source": "direct",
+          "device": "desktop"
+        }
+      }
+    },
+    "updateEnquiryStatus": {
+      "method": "PATCH",
+      "url": "http://localhost:5000/api/enquiries/{{enquiry_id}}/status",
+      "headers": {
+        "Authorization": "Bearer {{admin_token}}",
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "status": "contacted",
+        "note": "Called customer, appointment scheduled for tomorrow"
+      }
+    }
+  }
+}

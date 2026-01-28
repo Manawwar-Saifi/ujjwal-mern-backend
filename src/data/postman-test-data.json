@@ -1,0 +1,388 @@
+{
+  "auth": {
+    "adminLogin": {
+      "email": "admin@ujjwaldental.com",
+      "password": "Admin@123"
+    },
+    "patientLogin": {
+      "phone": "9812345678"
+    },
+    "patientOtpVerify": {
+      "phone": "9812345678",
+      "otp": "123456"
+    },
+    "forgotPassword": {
+      "email": "admin@ujjwaldental.com"
+    },
+    "resetPassword": {
+      "token": "{{resetToken}}",
+      "password": "NewPassword@123"
+    }
+  },
+
+  "users": {
+    "create": {
+      "name": "Dr. Neha Gupta",
+      "email": "neha@ujjwaldental.com",
+      "phone": "9876543213",
+      "password": "Doctor@123",
+      "role": "admin"
+    },
+    "update": {
+      "name": "Dr. Neha Gupta Updated",
+      "phone": "9876543214"
+    },
+    "changePassword": {
+      "currentPassword": "Doctor@123",
+      "newPassword": "NewDoctor@123"
+    }
+  },
+
+  "patients": {
+    "create": {
+      "name": "Amit Sharma",
+      "phone": "9812345678",
+      "email": "amit.sharma@email.com",
+      "gender": "male",
+      "dateOfBirth": "1990-05-15",
+      "address": {
+        "street": "45 Sector 15",
+        "city": "Hisar",
+        "state": "Haryana",
+        "pincode": "125001"
+      },
+      "bloodGroup": "B+",
+      "allergies": ["Penicillin"],
+      "medicalHistory": ["Diabetes"],
+      "emergencyContact": {
+        "name": "Sunita Sharma",
+        "phone": "9812345679",
+        "relation": "Wife"
+      }
+    },
+    "update": {
+      "name": "Amit Sharma Updated",
+      "email": "amit.updated@email.com",
+      "allergies": ["Penicillin", "Aspirin"]
+    },
+    "search": {
+      "query": "Amit"
+    }
+  },
+
+  "clinics": {
+    "create": {
+      "name": "Ujjwal Dental - Main Branch",
+      "address": {
+        "street": "123 Delhi Road",
+        "area": "Model Town",
+        "city": "Hisar",
+        "state": "Haryana",
+        "pincode": "125001"
+      },
+      "phone": "01662234567"
+    },
+    "update": {
+      "name": "Ujjwal Dental Clinic - Main Branch",
+      "phone": "01662234568"
+    },
+    "addHoliday": {
+      "date": "2026-01-26",
+      "reason": "Republic Day"
+    }
+  },
+
+  "appointments": {
+    "book": {
+      "patient": "{{patientId}}",
+      "clinic": "{{clinicId}}",
+      "date": "2026-01-25",
+      "timeSlot": "10:00",
+      "type": "regular",
+      "reason": "Routine dental checkup",
+      "source": "online"
+    },
+    "bookEmergency": {
+      "patient": "{{patientId}}",
+      "clinic": "{{clinicId}}",
+      "date": "2026-01-24",
+      "timeSlot": "09:00",
+      "type": "emergency",
+      "reason": "Severe tooth pain",
+      "source": "phone"
+    },
+    "bookFollowUp": {
+      "patient": "{{patientId}}",
+      "clinic": "{{clinicId}}",
+      "date": "2026-01-28",
+      "timeSlot": "11:30",
+      "type": "follow_up",
+      "reason": "Follow-up after root canal",
+      "source": "walk_in"
+    },
+    "updateStatus": {
+      "status": "confirmed"
+    },
+    "cancel": {
+      "reason": "Patient requested cancellation"
+    },
+    "reschedule": {
+      "date": "2026-01-30",
+      "timeSlot": "14:00",
+      "reason": "Patient unavailable on original date"
+    }
+  },
+
+  "treatments": {
+    "master": {
+      "create": {
+        "name": "Dental Checkup",
+        "code": "CHK",
+        "category": "preventive",
+        "description": "Complete oral examination and consultation",
+        "price": 300,
+        "duration": 20,
+        "sessionsRequired": 1
+      },
+      "createRootCanal": {
+        "name": "Root Canal Treatment",
+        "code": "RCT",
+        "category": "endodontic",
+        "description": "Root canal treatment for infected tooth",
+        "price": 5000,
+        "duration": 60,
+        "sessionsRequired": 2
+      },
+      "createImplant": {
+        "name": "Dental Implant",
+        "code": "IMP",
+        "category": "prosthodontic",
+        "description": "Single tooth dental implant",
+        "price": 35000,
+        "duration": 90,
+        "sessionsRequired": 3
+      },
+      "update": {
+        "price": 350,
+        "description": "Updated description"
+      }
+    },
+    "patient": {
+      "add": {
+        "patient": "{{patientId}}",
+        "treatmentType": "{{treatmentTypeId}}",
+        "clinic": "{{clinicId}}",
+        "teeth": ["36"],
+        "price": 5000,
+        "diagnosis": "Irreversible pulpitis",
+        "treatmentPlan": "Root canal treatment followed by crown",
+        "notes": "Patient has sensitivity to cold"
+      },
+      "addSession": {
+        "date": "2026-01-25",
+        "notes": "Session 1 - Pulp extirpation completed"
+      },
+      "updateStatus": {
+        "status": "in_progress"
+      },
+      "scheduleFollowUp": {
+        "date": "2026-02-10"
+      }
+    }
+  },
+
+  "tests": {
+    "master": {
+      "create": {
+        "name": "Orthopantomogram (OPG)",
+        "code": "OPG",
+        "category": "radiograph",
+        "description": "Full mouth panoramic X-ray",
+        "price": 500
+      },
+      "createCBCT": {
+        "name": "CBCT Scan",
+        "code": "CBCT",
+        "category": "radiograph",
+        "description": "3D cone beam CT scan for implant planning",
+        "price": 3000
+      }
+    },
+    "patient": {
+      "order": {
+        "patient": "{{patientId}}",
+        "testType": "{{testTypeId}}",
+        "clinic": "{{clinicId}}",
+        "notes": "Required before implant placement"
+      },
+      "updateStatus": {
+        "status": "completed",
+        "result": "Normal findings, no pathology detected"
+      }
+    }
+  },
+
+  "memberships": {
+    "plans": {
+      "create": {
+        "name": "Individual Silver",
+        "code": "IND-SLV",
+        "type": "individual",
+        "tier": "silver",
+        "description": "Basic membership with 10% discount",
+        "price": 999,
+        "durationMonths": 12,
+        "discountPercentage": 10,
+        "maxMembers": 1,
+        "features": [
+          "10% discount on all treatments",
+          "Priority appointment booking",
+          "Free dental checkup on enrollment"
+        ]
+      },
+      "createGold": {
+        "name": "Individual Gold",
+        "code": "IND-GLD",
+        "type": "individual",
+        "tier": "gold",
+        "description": "Premium membership with 15% discount",
+        "price": 1999,
+        "durationMonths": 12,
+        "discountPercentage": 15,
+        "maxMembers": 1,
+        "features": [
+          "15% discount on all treatments",
+          "1 free dental cleaning per year",
+          "Priority appointment booking"
+        ]
+      }
+    },
+    "assign": {
+      "patientId": "{{patientId}}",
+      "planId": "{{planId}}",
+      "startDate": "2026-01-23"
+    },
+    "renew": {
+      "planId": "{{planId}}"
+    }
+  },
+
+  "billing": {
+    "invoices": {
+      "create": {
+        "patient": "{{patientId}}",
+        "clinic": "{{clinicId}}",
+        "items": [
+          {
+            "description": "Root Canal Treatment",
+            "quantity": 1,
+            "unitPrice": 5000,
+            "discount": 500
+          },
+          {
+            "description": "Dental X-Ray (IOPA)",
+            "quantity": 2,
+            "unitPrice": 200,
+            "discount": 0
+          }
+        ]
+      },
+      "createSimple": {
+        "patient": "{{patientId}}",
+        "clinic": "{{clinicId}}",
+        "items": [
+          {
+            "description": "Dental Cleaning",
+            "quantity": 1,
+            "unitPrice": 800,
+            "discount": 80
+          }
+        ]
+      },
+      "update": {
+        "items": [
+          {
+            "description": "Root Canal Treatment",
+            "quantity": 1,
+            "unitPrice": 5500,
+            "discount": 550
+          }
+        ]
+      }
+    }
+  },
+
+  "payments": {
+    "recordCash": {
+      "patient": "{{patientId}}",
+      "invoice": "{{invoiceId}}",
+      "amount": 4900,
+      "paymentMethod": "cash",
+      "notes": "Full payment received"
+    },
+    "recordUPI": {
+      "patient": "{{patientId}}",
+      "invoice": "{{invoiceId}}",
+      "amount": 2000,
+      "paymentMethod": "upi",
+      "transactionId": "UPI123456789",
+      "notes": "Partial payment"
+    },
+    "recordCard": {
+      "patient": "{{patientId}}",
+      "invoice": "{{invoiceId}}",
+      "amount": 5000,
+      "paymentMethod": "card",
+      "transactionId": "CARD987654321",
+      "notes": "Card payment"
+    },
+    "razorpayCreateOrder": {
+      "amount": 35000,
+      "patient": "{{patientId}}",
+      "invoice": "{{invoiceId}}"
+    },
+    "razorpayVerify": {
+      "razorpay_order_id": "order_NxYz123AbCdEfG",
+      "razorpay_payment_id": "pay_NxYz123AbCdEfG",
+      "razorpay_signature": "{{razorpaySignature}}"
+    },
+    "refund": {
+      "reason": "Treatment cancelled by patient",
+      "amount": 1000
+    }
+  },
+
+  "reports": {
+    "upload": {
+      "patient": "{{patientId}}",
+      "type": "xray",
+      "title": "OPG X-Ray Report",
+      "description": "Full mouth panoramic X-ray",
+      "findings": "Normal findings, no pathology detected"
+    },
+    "update": {
+      "title": "OPG X-Ray Report - Updated",
+      "findings": "Mild bone loss observed in lower right quadrant"
+    }
+  },
+
+  "notifications": {
+    "send": {
+      "recipient": "{{patientId}}",
+      "recipientModel": "Patient",
+      "type": "appointment_reminder",
+      "title": "Appointment Reminder",
+      "message": "Your appointment is scheduled for tomorrow at 10:00 AM",
+      "channels": ["sms", "app"]
+    },
+    "sendPaymentReminder": {
+      "recipient": "{{patientId}}",
+      "recipientModel": "Patient",
+      "type": "payment_due",
+      "title": "Payment Due",
+      "message": "You have a pending payment of Rs. 990",
+      "priority": "high",
+      "channels": ["sms"]
+    }
+  }
+}

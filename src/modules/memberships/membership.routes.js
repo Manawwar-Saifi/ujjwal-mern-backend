@@ -1,0 +1,59 @@
+import { Router } from "express";
+import * as membershipController from "./membership.controller.js";
+import { authProtect } from "../../middlewares/auth.middleware.js";
+
+const router = Router();
+
+/**
+ * MEMBERSHIP ROUTES
+ * Base path: /api/memberships
+ *
+ * Ujjwal Dental has 6 membership plans:
+ * 1. Cosmodentofacial Family Dental Plan - ₹4,999
+ * 2. Cosmodentofacial Women Dental Plan - ₹3,400
+ * 3. Implant Post Care - ₹4,500
+ * 4. Cosmodentofacial Student's Dental Plan - ₹1,300
+ * 5. Oral Hygiene Products Kit for Adults - ₹562
+ * 6. Oral Hygiene Products Kit for Kids - ₹270
+ */
+
+// ==================== MEMBERSHIP PLANS (Catalog) ====================
+
+// Get all membership plans - Public
+router.get("/plans", membershipController.getAllPlans);
+
+// Get single plan by ID - Public
+router.get("/plans/:id", membershipController.getPlanById);
+
+// Create new plan (Admin)
+router.post("/plans", authProtect, membershipController.createPlan);
+
+// Update plan (Admin)
+router.patch("/plans/:id", authProtect, membershipController.updatePlan);
+
+// Delete (deactivate) plan (Admin)
+router.delete("/plans/:id", authProtect, membershipController.deletePlan);
+
+// Seed default plans (Admin)
+router.post("/plans/seed", authProtect, membershipController.seedDefaultPlans);
+
+// ==================== PATIENT MEMBERSHIPS ====================
+
+// Assign membership to patient (Admin)
+router.post("/assign", authProtect, membershipController.assignMembership);
+
+// Renew patient's membership (Admin)
+router.post("/renew/:patientId", authProtect, membershipController.renewMembership);
+
+// Cancel patient's membership (Admin)
+router.post("/cancel/:patientId", authProtect, membershipController.cancelMembership);
+
+// ==================== MEMBER MANAGEMENT ====================
+
+// Get all active members (Admin)
+router.get("/members", authProtect, membershipController.getActiveMembers);
+
+// Get membership statistics (Admin)
+router.get("/stats", authProtect, membershipController.getMembershipStats);
+
+export default router;

@@ -1,0 +1,1155 @@
+{
+  "info": {
+    "name": "Ujjwal Dental CMS API",
+    "baseUrl": "http://localhost:5000/api"
+  },
+
+  "auth": [
+    {
+      "name": "Admin Login",
+      "method": "POST",
+      "endpoint": "/api/auth/login",
+      "body": {
+        "email": "admin@ujjwaldental.com",
+        "password": "Admin@123"
+      }
+    },
+    {
+      "name": "Patient Login (Send OTP)",
+      "method": "POST",
+      "endpoint": "/api/auth/patient/login",
+      "body": {
+        "phone": "9812345678"
+      }
+    },
+    {
+      "name": "Patient Verify OTP",
+      "method": "POST",
+      "endpoint": "/api/auth/patient/verify-otp",
+      "body": {
+        "phone": "9812345678",
+        "otp": "123456"
+      }
+    },
+    {
+      "name": "Refresh Token",
+      "method": "POST",
+      "endpoint": "/api/auth/refresh-token",
+      "body": {
+        "refreshToken": "{{refreshToken}}"
+      }
+    },
+    {
+      "name": "Logout",
+      "method": "POST",
+      "endpoint": "/api/auth/logout",
+      "body": {}
+    },
+    {
+      "name": "Forgot Password",
+      "method": "POST",
+      "endpoint": "/api/auth/forgot-password",
+      "body": {
+        "email": "admin@ujjwaldental.com"
+      }
+    },
+    {
+      "name": "Reset Password",
+      "method": "POST",
+      "endpoint": "/api/auth/reset-password",
+      "body": {
+        "token": "{{resetToken}}",
+        "password": "NewPassword@123"
+      }
+    }
+  ],
+
+  "users": [
+    {
+      "name": "List All Users",
+      "method": "GET",
+      "endpoint": "/api/users",
+      "body": null
+    },
+    {
+      "name": "Get Current User",
+      "method": "GET",
+      "endpoint": "/api/users/me",
+      "body": null
+    },
+    {
+      "name": "Update Current User",
+      "method": "PATCH",
+      "endpoint": "/api/users/me",
+      "body": {
+        "name": "Dr. Ujjwal Sharma Updated",
+        "phone": "9876543210"
+      }
+    },
+    {
+      "name": "Change Password",
+      "method": "PATCH",
+      "endpoint": "/api/users/me/password",
+      "body": {
+        "currentPassword": "Admin@123",
+        "newPassword": "NewAdmin@123"
+      }
+    },
+    {
+      "name": "Get User by ID",
+      "method": "GET",
+      "endpoint": "/api/users/{{userId}}",
+      "body": null
+    },
+    {
+      "name": "Create User",
+      "method": "POST",
+      "endpoint": "/api/users",
+      "body": {
+        "name": "Dr. Priya Verma",
+        "email": "priya@ujjwaldental.com",
+        "phone": "9876543211",
+        "password": "Doctor@123",
+        "role": "admin"
+      }
+    },
+    {
+      "name": "Update User",
+      "method": "PATCH",
+      "endpoint": "/api/users/{{userId}}",
+      "body": {
+        "name": "Dr. Priya Verma Updated",
+        "phone": "9876543212"
+      }
+    },
+    {
+      "name": "Deactivate User",
+      "method": "DELETE",
+      "endpoint": "/api/users/{{userId}}",
+      "body": null
+    }
+  ],
+
+  "patients": [
+    {
+      "name": "List Patients",
+      "method": "GET",
+      "endpoint": "/api/patients",
+      "body": null
+    },
+    {
+      "name": "Search Patients",
+      "method": "GET",
+      "endpoint": "/api/patients/search?query=Amit",
+      "body": null
+    },
+    {
+      "name": "Get Patient by ID",
+      "method": "GET",
+      "endpoint": "/api/patients/{{patientId}}",
+      "body": null
+    },
+    {
+      "name": "Create Patient",
+      "method": "POST",
+      "endpoint": "/api/patients",
+      "body": {
+        "name": "Amit Sharma",
+        "phone": "9812345678",
+        "email": "amit.sharma@email.com",
+        "gender": "male",
+        "dateOfBirth": "1990-05-15",
+        "address": {
+          "street": "45 Sector 15",
+          "city": "Hisar",
+          "state": "Haryana",
+          "pincode": "125001"
+        },
+        "bloodGroup": "B+",
+        "allergies": ["Penicillin"],
+        "medicalHistory": ["Diabetes"],
+        "emergencyContact": {
+          "name": "Sunita Sharma",
+          "phone": "9812345679",
+          "relation": "Wife"
+        }
+      }
+    },
+    {
+      "name": "Update Patient",
+      "method": "PATCH",
+      "endpoint": "/api/patients/{{patientId}}",
+      "body": {
+        "name": "Amit Sharma Updated",
+        "email": "amit.updated@email.com",
+        "allergies": ["Penicillin", "Aspirin"]
+      }
+    },
+    {
+      "name": "Deactivate Patient",
+      "method": "DELETE",
+      "endpoint": "/api/patients/{{patientId}}",
+      "body": null
+    },
+    {
+      "name": "Get Patient Appointments",
+      "method": "GET",
+      "endpoint": "/api/patients/{{patientId}}/appointments",
+      "body": null
+    },
+    {
+      "name": "Get Patient Treatments",
+      "method": "GET",
+      "endpoint": "/api/patients/{{patientId}}/treatments",
+      "body": null
+    },
+    {
+      "name": "Get Patient Payments",
+      "method": "GET",
+      "endpoint": "/api/patients/{{patientId}}/payments",
+      "body": null
+    },
+    {
+      "name": "Get Patient Reports",
+      "method": "GET",
+      "endpoint": "/api/patients/{{patientId}}/reports",
+      "body": null
+    },
+    {
+      "name": "Get Patient Membership",
+      "method": "GET",
+      "endpoint": "/api/patients/{{patientId}}/membership",
+      "body": null
+    }
+  ],
+
+  "clinics": [
+    {
+      "name": "List Clinics",
+      "method": "GET",
+      "endpoint": "/api/clinics",
+      "body": null
+    },
+    {
+      "name": "Get Clinic by ID",
+      "method": "GET",
+      "endpoint": "/api/clinics/{{clinicId}}",
+      "body": null
+    },
+    {
+      "name": "Get Available Slots",
+      "method": "GET",
+      "endpoint": "/api/clinics/{{clinicId}}/slots?date=2026-01-25",
+      "body": null
+    },
+    {
+      "name": "Create Clinic",
+      "method": "POST",
+      "endpoint": "/api/clinics",
+      "body": {
+        "name": "Ujjwal Dental - Main Branch",
+        "address": {
+          "street": "123 Delhi Road",
+          "area": "Model Town",
+          "city": "Hisar",
+          "state": "Haryana",
+          "pincode": "125001"
+        },
+        "phone": "01662234567"
+      }
+    },
+    {
+      "name": "Update Clinic",
+      "method": "PATCH",
+      "endpoint": "/api/clinics/{{clinicId}}",
+      "body": {
+        "name": "Ujjwal Dental Clinic - Main",
+        "phone": "01662234568"
+      }
+    },
+    {
+      "name": "Update Operating Hours",
+      "method": "PATCH",
+      "endpoint": "/api/clinics/{{clinicId}}/hours",
+      "body": {
+        "operatingHours": {
+          "monday": { "open": "09:00", "close": "18:00" },
+          "tuesday": { "open": "09:00", "close": "18:00" },
+          "wednesday": { "open": "09:00", "close": "18:00" },
+          "thursday": { "open": "09:00", "close": "18:00" },
+          "friday": { "open": "09:00", "close": "18:00" },
+          "saturday": { "open": "09:00", "close": "14:00" },
+          "sunday": { "open": null, "close": null }
+        }
+      }
+    },
+    {
+      "name": "Add Holiday",
+      "method": "POST",
+      "endpoint": "/api/clinics/{{clinicId}}/holidays",
+      "body": {
+        "date": "2026-01-26",
+        "reason": "Republic Day"
+      }
+    },
+    {
+      "name": "Remove Holiday",
+      "method": "DELETE",
+      "endpoint": "/api/clinics/{{clinicId}}/holidays/{{holidayId}}",
+      "body": null
+    }
+  ],
+
+  "appointments": [
+    {
+      "name": "List Appointments",
+      "method": "GET",
+      "endpoint": "/api/appointments",
+      "body": null
+    },
+    {
+      "name": "Today's Appointments",
+      "method": "GET",
+      "endpoint": "/api/appointments/today",
+      "body": null
+    },
+    {
+      "name": "Upcoming Appointments",
+      "method": "GET",
+      "endpoint": "/api/appointments/upcoming",
+      "body": null
+    },
+    {
+      "name": "Get Available Slots",
+      "method": "GET",
+      "endpoint": "/api/appointments/available-slots?clinicId={{clinicId}}&date=2026-01-25",
+      "body": null
+    },
+    {
+      "name": "Get Appointment by ID",
+      "method": "GET",
+      "endpoint": "/api/appointments/{{appointmentId}}",
+      "body": null
+    },
+    {
+      "name": "Book Appointment",
+      "method": "POST",
+      "endpoint": "/api/appointments",
+      "body": {
+        "patient": "{{patientId}}",
+        "clinic": "{{clinicId}}",
+        "date": "2026-01-25",
+        "timeSlot": "10:00",
+        "type": "regular",
+        "reason": "Routine dental checkup",
+        "source": "online"
+      }
+    },
+    {
+      "name": "Book Emergency Appointment",
+      "method": "POST",
+      "endpoint": "/api/appointments",
+      "body": {
+        "patient": "{{patientId}}",
+        "clinic": "{{clinicId}}",
+        "date": "2026-01-24",
+        "timeSlot": "09:00",
+        "type": "emergency",
+        "reason": "Severe tooth pain, possible abscess",
+        "source": "phone"
+      }
+    },
+    {
+      "name": "Book Follow-up Appointment",
+      "method": "POST",
+      "endpoint": "/api/appointments",
+      "body": {
+        "patient": "{{patientId}}",
+        "clinic": "{{clinicId}}",
+        "date": "2026-01-28",
+        "timeSlot": "11:30",
+        "type": "follow_up",
+        "reason": "Follow-up after root canal",
+        "source": "walk_in"
+      }
+    },
+    {
+      "name": "Update Appointment",
+      "method": "PATCH",
+      "endpoint": "/api/appointments/{{appointmentId}}",
+      "body": {
+        "reason": "Updated reason for visit",
+        "notes": "Patient requested morning slot"
+      }
+    },
+    {
+      "name": "Update Appointment Status",
+      "method": "PATCH",
+      "endpoint": "/api/appointments/{{appointmentId}}/status",
+      "body": {
+        "status": "confirmed"
+      }
+    },
+    {
+      "name": "Check-in Patient",
+      "method": "POST",
+      "endpoint": "/api/appointments/{{appointmentId}}/check-in",
+      "body": {}
+    },
+    {
+      "name": "Complete Appointment",
+      "method": "POST",
+      "endpoint": "/api/appointments/{{appointmentId}}/complete",
+      "body": {
+        "notes": "Treatment completed successfully"
+      }
+    },
+    {
+      "name": "Cancel Appointment",
+      "method": "POST",
+      "endpoint": "/api/appointments/{{appointmentId}}/cancel",
+      "body": {
+        "reason": "Patient requested cancellation"
+      }
+    },
+    {
+      "name": "Reschedule Appointment",
+      "method": "POST",
+      "endpoint": "/api/appointments/{{appointmentId}}/reschedule",
+      "body": {
+        "date": "2026-01-30",
+        "timeSlot": "14:00",
+        "reason": "Patient unavailable on original date"
+      }
+    }
+  ],
+
+  "treatments": {
+    "master": [
+      {
+        "name": "List Treatment Types",
+        "method": "GET",
+        "endpoint": "/api/treatments/master",
+        "body": null
+      },
+      {
+        "name": "Get Treatment Type",
+        "method": "GET",
+        "endpoint": "/api/treatments/master/{{treatmentTypeId}}",
+        "body": null
+      },
+      {
+        "name": "Create Treatment Type - Checkup",
+        "method": "POST",
+        "endpoint": "/api/treatments/master",
+        "body": {
+          "name": "Dental Checkup",
+          "code": "CHK",
+          "category": "preventive",
+          "description": "Complete oral examination and consultation",
+          "price": 300,
+          "duration": 20,
+          "sessionsRequired": 1
+        }
+      },
+      {
+        "name": "Create Treatment Type - Cleaning",
+        "method": "POST",
+        "endpoint": "/api/treatments/master",
+        "body": {
+          "name": "Dental Cleaning (Scaling)",
+          "code": "CLN",
+          "category": "preventive",
+          "description": "Professional teeth cleaning and polishing",
+          "price": 800,
+          "duration": 45,
+          "sessionsRequired": 1
+        }
+      },
+      {
+        "name": "Create Treatment Type - Root Canal",
+        "method": "POST",
+        "endpoint": "/api/treatments/master",
+        "body": {
+          "name": "Root Canal Treatment",
+          "code": "RCT",
+          "category": "endodontic",
+          "description": "Root canal treatment for infected tooth",
+          "price": 5000,
+          "duration": 60,
+          "sessionsRequired": 2
+        }
+      },
+      {
+        "name": "Create Treatment Type - Filling",
+        "method": "POST",
+        "endpoint": "/api/treatments/master",
+        "body": {
+          "name": "Tooth Filling (Composite)",
+          "code": "FLC",
+          "category": "restorative",
+          "description": "Tooth-colored composite filling",
+          "price": 1500,
+          "duration": 30,
+          "sessionsRequired": 1
+        }
+      },
+      {
+        "name": "Create Treatment Type - Extraction",
+        "method": "POST",
+        "endpoint": "/api/treatments/master",
+        "body": {
+          "name": "Tooth Extraction (Simple)",
+          "code": "EXS",
+          "category": "surgical",
+          "description": "Simple tooth extraction",
+          "price": 500,
+          "duration": 30,
+          "sessionsRequired": 1
+        }
+      },
+      {
+        "name": "Create Treatment Type - Implant",
+        "method": "POST",
+        "endpoint": "/api/treatments/master",
+        "body": {
+          "name": "Dental Implant",
+          "code": "IMP",
+          "category": "prosthodontic",
+          "description": "Single tooth dental implant",
+          "price": 35000,
+          "duration": 90,
+          "sessionsRequired": 3
+        }
+      },
+      {
+        "name": "Create Treatment Type - Crown",
+        "method": "POST",
+        "endpoint": "/api/treatments/master",
+        "body": {
+          "name": "Dental Crown (Zirconia)",
+          "code": "CRZ",
+          "category": "prosthodontic",
+          "description": "Full zirconia crown",
+          "price": 12000,
+          "duration": 45,
+          "sessionsRequired": 2
+        }
+      },
+      {
+        "name": "Create Treatment Type - Whitening",
+        "method": "POST",
+        "endpoint": "/api/treatments/master",
+        "body": {
+          "name": "Teeth Whitening",
+          "code": "WHT",
+          "category": "cosmetic",
+          "description": "Professional teeth whitening treatment",
+          "price": 8000,
+          "duration": 60,
+          "sessionsRequired": 1
+        }
+      },
+      {
+        "name": "Update Treatment Type",
+        "method": "PATCH",
+        "endpoint": "/api/treatments/master/{{treatmentTypeId}}",
+        "body": {
+          "price": 350,
+          "description": "Updated description"
+        }
+      },
+      {
+        "name": "Deactivate Treatment Type",
+        "method": "DELETE",
+        "endpoint": "/api/treatments/master/{{treatmentTypeId}}",
+        "body": null
+      }
+    ],
+    "patient": [
+      {
+        "name": "List Patient Treatments",
+        "method": "GET",
+        "endpoint": "/api/treatments",
+        "body": null
+      },
+      {
+        "name": "Get Treatment",
+        "method": "GET",
+        "endpoint": "/api/treatments/{{treatmentId}}",
+        "body": null
+      },
+      {
+        "name": "Add Treatment - Root Canal",
+        "method": "POST",
+        "endpoint": "/api/treatments",
+        "body": {
+          "patient": "{{patientId}}",
+          "treatmentType": "{{treatmentTypeId}}",
+          "clinic": "{{clinicId}}",
+          "teeth": ["36"],
+          "price": 5000,
+          "diagnosis": "Irreversible pulpitis with periapical abscess",
+          "treatmentPlan": "Root canal treatment followed by crown",
+          "notes": "Patient has sensitivity to cold"
+        }
+      },
+      {
+        "name": "Add Treatment - Filling",
+        "method": "POST",
+        "endpoint": "/api/treatments",
+        "body": {
+          "patient": "{{patientId}}",
+          "treatmentType": "{{treatmentTypeId}}",
+          "clinic": "{{clinicId}}",
+          "teeth": ["11", "21"],
+          "price": 3000,
+          "diagnosis": "Dental caries on anterior teeth",
+          "treatmentPlan": "Composite filling on both teeth"
+        }
+      },
+      {
+        "name": "Update Treatment",
+        "method": "PATCH",
+        "endpoint": "/api/treatments/{{treatmentId}}",
+        "body": {
+          "notes": "Updated treatment notes",
+          "price": 5500
+        }
+      },
+      {
+        "name": "Update Treatment Status",
+        "method": "PATCH",
+        "endpoint": "/api/treatments/{{treatmentId}}/status",
+        "body": {
+          "status": "in_progress"
+        }
+      },
+      {
+        "name": "Add Session",
+        "method": "POST",
+        "endpoint": "/api/treatments/{{treatmentId}}/sessions",
+        "body": {
+          "date": "2026-01-25",
+          "notes": "Session 1 - Pulp extirpation completed",
+          "status": "completed"
+        }
+      },
+      {
+        "name": "Schedule Follow-up",
+        "method": "POST",
+        "endpoint": "/api/treatments/{{treatmentId}}/follow-up",
+        "body": {
+          "date": "2026-02-10"
+        }
+      }
+    ]
+  },
+
+  "tests": {
+    "master": [
+      {
+        "name": "List Test Types",
+        "method": "GET",
+        "endpoint": "/api/tests/master",
+        "body": null
+      },
+      {
+        "name": "Get Test Type",
+        "method": "GET",
+        "endpoint": "/api/tests/master/{{testTypeId}}",
+        "body": null
+      },
+      {
+        "name": "Create Test Type - IOPA",
+        "method": "POST",
+        "endpoint": "/api/tests/master",
+        "body": {
+          "name": "Intraoral Periapical X-Ray (IOPA)",
+          "code": "IOPA",
+          "category": "radiograph",
+          "description": "Single tooth X-ray for detailed view",
+          "price": 200
+        }
+      },
+      {
+        "name": "Create Test Type - OPG",
+        "method": "POST",
+        "endpoint": "/api/tests/master",
+        "body": {
+          "name": "Orthopantomogram (OPG)",
+          "code": "OPG",
+          "category": "radiograph",
+          "description": "Full mouth panoramic X-ray",
+          "price": 500
+        }
+      },
+      {
+        "name": "Create Test Type - CBCT",
+        "method": "POST",
+        "endpoint": "/api/tests/master",
+        "body": {
+          "name": "CBCT Scan",
+          "code": "CBCT",
+          "category": "radiograph",
+          "description": "3D cone beam CT scan for implant planning",
+          "price": 3000
+        }
+      },
+      {
+        "name": "Update Test Type",
+        "method": "PATCH",
+        "endpoint": "/api/tests/master/{{testTypeId}}",
+        "body": {
+          "price": 550,
+          "description": "Updated description"
+        }
+      },
+      {
+        "name": "Deactivate Test Type",
+        "method": "DELETE",
+        "endpoint": "/api/tests/master/{{testTypeId}}",
+        "body": null
+      }
+    ],
+    "patient": [
+      {
+        "name": "List Patient Tests",
+        "method": "GET",
+        "endpoint": "/api/tests",
+        "body": null
+      },
+      {
+        "name": "Get Test",
+        "method": "GET",
+        "endpoint": "/api/tests/{{testId}}",
+        "body": null
+      },
+      {
+        "name": "Order Test",
+        "method": "POST",
+        "endpoint": "/api/tests",
+        "body": {
+          "patient": "{{patientId}}",
+          "testType": "{{testTypeId}}",
+          "clinic": "{{clinicId}}",
+          "notes": "Required before implant placement"
+        }
+      },
+      {
+        "name": "Update Test",
+        "method": "PATCH",
+        "endpoint": "/api/tests/{{testId}}",
+        "body": {
+          "notes": "Updated notes"
+        }
+      },
+      {
+        "name": "Update Test Status",
+        "method": "PATCH",
+        "endpoint": "/api/tests/{{testId}}/status",
+        "body": {
+          "status": "completed",
+          "result": "Normal findings, no pathology detected"
+        }
+      }
+    ]
+  },
+
+  "memberships": {
+    "plans": [
+      {
+        "name": "List Membership Plans",
+        "method": "GET",
+        "endpoint": "/api/memberships/plans",
+        "body": null
+      },
+      {
+        "name": "Get Plan",
+        "method": "GET",
+        "endpoint": "/api/memberships/plans/{{planId}}",
+        "body": null
+      },
+      {
+        "name": "Create Plan - Individual Silver",
+        "method": "POST",
+        "endpoint": "/api/memberships/plans",
+        "body": {
+          "name": "Individual Silver",
+          "code": "IND-SLV",
+          "type": "individual",
+          "tier": "silver",
+          "description": "Basic membership with 10% discount",
+          "price": 999,
+          "durationMonths": 12,
+          "discountPercentage": 10,
+          "maxMembers": 1,
+          "features": [
+            "10% discount on all treatments",
+            "Priority appointment booking",
+            "Free dental checkup on enrollment"
+          ]
+        }
+      },
+      {
+        "name": "Create Plan - Individual Gold",
+        "method": "POST",
+        "endpoint": "/api/memberships/plans",
+        "body": {
+          "name": "Individual Gold",
+          "code": "IND-GLD",
+          "type": "individual",
+          "tier": "gold",
+          "description": "Premium membership with 15% discount",
+          "price": 1999,
+          "durationMonths": 12,
+          "discountPercentage": 15,
+          "maxMembers": 1,
+          "features": [
+            "15% discount on all treatments",
+            "1 free dental cleaning per year",
+            "Priority appointment booking"
+          ]
+        }
+      },
+      {
+        "name": "Create Plan - Family Gold",
+        "method": "POST",
+        "endpoint": "/api/memberships/plans",
+        "body": {
+          "name": "Family Gold",
+          "code": "FAM-GLD",
+          "type": "family",
+          "tier": "gold",
+          "description": "Premium family membership",
+          "price": 3499,
+          "durationMonths": 12,
+          "discountPercentage": 15,
+          "maxMembers": 4,
+          "features": [
+            "15% discount on all treatments",
+            "Coverage for up to 4 family members",
+            "2 free dental cleanings per year"
+          ]
+        }
+      },
+      {
+        "name": "Update Plan",
+        "method": "PATCH",
+        "endpoint": "/api/memberships/plans/{{planId}}",
+        "body": {
+          "price": 1099,
+          "description": "Updated description"
+        }
+      },
+      {
+        "name": "Deactivate Plan",
+        "method": "DELETE",
+        "endpoint": "/api/memberships/plans/{{planId}}",
+        "body": null
+      }
+    ],
+    "patient": [
+      {
+        "name": "Assign Membership",
+        "method": "POST",
+        "endpoint": "/api/memberships/assign",
+        "body": {
+          "patientId": "{{patientId}}",
+          "planId": "{{planId}}",
+          "startDate": "2026-01-23"
+        }
+      },
+      {
+        "name": "Renew Membership",
+        "method": "POST",
+        "endpoint": "/api/memberships/renew/{{patientId}}",
+        "body": {
+          "planId": "{{planId}}"
+        }
+      },
+      {
+        "name": "Cancel Membership",
+        "method": "POST",
+        "endpoint": "/api/memberships/cancel/{{patientId}}",
+        "body": {
+          "reason": "Patient requested cancellation"
+        }
+      }
+    ]
+  },
+
+  "billing": [
+    {
+      "name": "List Invoices",
+      "method": "GET",
+      "endpoint": "/api/billing/invoices",
+      "body": null
+    },
+    {
+      "name": "Get Invoice",
+      "method": "GET",
+      "endpoint": "/api/billing/invoices/{{invoiceId}}",
+      "body": null
+    },
+    {
+      "name": "Create Invoice",
+      "method": "POST",
+      "endpoint": "/api/billing/invoices",
+      "body": {
+        "patient": "{{patientId}}",
+        "clinic": "{{clinicId}}",
+        "items": [
+          {
+            "description": "Root Canal Treatment",
+            "quantity": 1,
+            "unitPrice": 5000,
+            "discount": 500
+          },
+          {
+            "description": "Dental X-Ray (IOPA)",
+            "quantity": 2,
+            "unitPrice": 200,
+            "discount": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "Create Invoice - Simple",
+      "method": "POST",
+      "endpoint": "/api/billing/invoices",
+      "body": {
+        "patient": "{{patientId}}",
+        "clinic": "{{clinicId}}",
+        "items": [
+          {
+            "description": "Dental Cleaning",
+            "quantity": 1,
+            "unitPrice": 800,
+            "discount": 80
+          }
+        ]
+      }
+    },
+    {
+      "name": "Update Invoice",
+      "method": "PATCH",
+      "endpoint": "/api/billing/invoices/{{invoiceId}}",
+      "body": {
+        "items": [
+          {
+            "description": "Root Canal Treatment",
+            "quantity": 1,
+            "unitPrice": 5500,
+            "discount": 550
+          }
+        ]
+      }
+    },
+    {
+      "name": "Issue Invoice",
+      "method": "POST",
+      "endpoint": "/api/billing/invoices/{{invoiceId}}/issue",
+      "body": {}
+    },
+    {
+      "name": "Cancel Invoice",
+      "method": "POST",
+      "endpoint": "/api/billing/invoices/{{invoiceId}}/cancel",
+      "body": {
+        "reason": "Invoice created in error"
+      }
+    },
+    {
+      "name": "Download Invoice PDF",
+      "method": "GET",
+      "endpoint": "/api/billing/invoices/{{invoiceId}}/pdf",
+      "body": null
+    }
+  ],
+
+  "payments": [
+    {
+      "name": "List Payments",
+      "method": "GET",
+      "endpoint": "/api/payments",
+      "body": null
+    },
+    {
+      "name": "Get Payment",
+      "method": "GET",
+      "endpoint": "/api/payments/{{paymentId}}",
+      "body": null
+    },
+    {
+      "name": "Record Cash Payment",
+      "method": "POST",
+      "endpoint": "/api/payments",
+      "body": {
+        "patient": "{{patientId}}",
+        "invoice": "{{invoiceId}}",
+        "amount": 4900,
+        "paymentMethod": "cash",
+        "notes": "Full payment received"
+      }
+    },
+    {
+      "name": "Record UPI Payment",
+      "method": "POST",
+      "endpoint": "/api/payments",
+      "body": {
+        "patient": "{{patientId}}",
+        "invoice": "{{invoiceId}}",
+        "amount": 2000,
+        "paymentMethod": "upi",
+        "transactionId": "UPI123456789",
+        "notes": "Partial payment"
+      }
+    },
+    {
+      "name": "Record Card Payment",
+      "method": "POST",
+      "endpoint": "/api/payments",
+      "body": {
+        "patient": "{{patientId}}",
+        "invoice": "{{invoiceId}}",
+        "amount": 5000,
+        "paymentMethod": "card",
+        "transactionId": "CARD987654321",
+        "notes": "Card payment"
+      }
+    },
+    {
+      "name": "Create Razorpay Order",
+      "method": "POST",
+      "endpoint": "/api/payments/razorpay/create-order",
+      "body": {
+        "amount": 35000,
+        "patient": "{{patientId}}",
+        "invoice": "{{invoiceId}}"
+      }
+    },
+    {
+      "name": "Verify Razorpay Payment",
+      "method": "POST",
+      "endpoint": "/api/payments/razorpay/verify",
+      "body": {
+        "razorpay_order_id": "order_NxYz123AbCdEfG",
+        "razorpay_payment_id": "pay_NxYz123AbCdEfG",
+        "razorpay_signature": "{{razorpaySignature}}"
+      }
+    },
+    {
+      "name": "Refund Payment",
+      "method": "POST",
+      "endpoint": "/api/payments/{{paymentId}}/refund",
+      "body": {
+        "reason": "Treatment cancelled by patient",
+        "amount": 1000
+      }
+    }
+  ],
+
+  "reports": [
+    {
+      "name": "List Reports",
+      "method": "GET",
+      "endpoint": "/api/reports",
+      "body": null
+    },
+    {
+      "name": "Get Report",
+      "method": "GET",
+      "endpoint": "/api/reports/{{reportId}}",
+      "body": null
+    },
+    {
+      "name": "Upload Report",
+      "method": "POST",
+      "endpoint": "/api/reports",
+      "body": {
+        "patient": "{{patientId}}",
+        "type": "xray",
+        "title": "OPG X-Ray Report",
+        "description": "Full mouth panoramic X-ray",
+        "findings": "Normal findings, no pathology detected"
+      }
+    },
+    {
+      "name": "Update Report",
+      "method": "PATCH",
+      "endpoint": "/api/reports/{{reportId}}",
+      "body": {
+        "title": "OPG X-Ray Report - Updated",
+        "findings": "Mild bone loss observed in lower right quadrant"
+      }
+    },
+    {
+      "name": "Delete Report",
+      "method": "DELETE",
+      "endpoint": "/api/reports/{{reportId}}",
+      "body": null
+    },
+    {
+      "name": "Download Report PDF",
+      "method": "GET",
+      "endpoint": "/api/reports/{{reportId}}/download",
+      "body": null
+    }
+  ],
+
+  "notifications": [
+    {
+      "name": "List Notifications",
+      "method": "GET",
+      "endpoint": "/api/notifications",
+      "body": null
+    },
+    {
+      "name": "Get Unread Count",
+      "method": "GET",
+      "endpoint": "/api/notifications/unread-count",
+      "body": null
+    },
+    {
+      "name": "Mark as Read",
+      "method": "PATCH",
+      "endpoint": "/api/notifications/{{notificationId}}/read",
+      "body": {}
+    },
+    {
+      "name": "Mark All as Read",
+      "method": "PATCH",
+      "endpoint": "/api/notifications/read-all",
+      "body": {}
+    },
+    {
+      "name": "Send Notification - Appointment Reminder",
+      "method": "POST",
+      "endpoint": "/api/notifications/send",
+      "body": {
+        "recipient": "{{patientId}}",
+        "recipientModel": "Patient",
+        "type": "appointment_reminder",
+        "title": "Appointment Reminder",
+        "message": "Your appointment is scheduled for tomorrow at 10:00 AM",
+        "channels": ["sms", "app"]
+      }
+    },
+    {
+      "name": "Send Notification - Payment Due",
+      "method": "POST",
+      "endpoint": "/api/notifications/send",
+      "body": {
+        "recipient": "{{patientId}}",
+        "recipientModel": "Patient",
+        "type": "payment_due",
+        "title": "Payment Due",
+        "message": "You have a pending payment of Rs. 990",
+        "priority": "high",
+        "channels": ["sms"]
+      }
+    }
+  ]
+}

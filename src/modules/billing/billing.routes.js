@@ -1,0 +1,69 @@
+import { Router } from "express";
+import * as billingController from "./billing.controller.js";
+import { authProtect, anyAuth } from "../../middlewares/auth.middleware.js";
+
+const router = Router();
+
+/**
+ * BILLING/INVOICE ROUTES
+ * Base path: /api/billing
+ *
+ * Invoices contain:
+ * - OPD fees
+ * - Treatment charges
+ * - Test charges
+ * - Membership purchases
+ * - Discounts (from membership)
+ */
+
+// ==================== INVOICE CRUD ====================
+
+// Get all invoices (with filters) - Admin
+router.get("/invoices", authProtect, billingController.getAllInvoices);
+
+// Get billing statistics - Admin
+router.get("/stats", authProtect, billingController.getBillingStats);
+
+// Get overdue invoices - Admin
+router.get("/overdue", authProtect, billingController.getOverdueInvoices);
+
+// Get invoice by invoice number
+router.get("/invoices/number/:invoiceNumber", authProtect, billingController.getInvoiceByNumber);
+
+// Get single invoice by ID
+router.get("/invoices/:id", anyAuth, billingController.getInvoiceById);
+
+// Create new invoice - Admin
+router.post("/invoices", authProtect, billingController.createInvoice);
+
+// Update invoice (add items, update details) - Admin
+router.patch("/invoices/:id", authProtect, billingController.updateInvoice);
+
+// ==================== INVOICE ITEMS ====================
+
+// Add item to invoice - Admin
+router.post("/invoices/:id/items", authProtect, billingController.addInvoiceItem);
+
+// Remove item from invoice - Admin
+router.delete("/invoices/:id/items/:itemIndex", authProtect, billingController.removeInvoiceItem);
+
+// ==================== INVOICE ACTIONS ====================
+
+// Issue invoice (finalize and send to patient) - Admin
+router.post("/invoices/:id/issue", authProtect, billingController.issueInvoice);
+
+// Cancel invoice - Admin
+router.post("/invoices/:id/cancel", authProtect, billingController.cancelInvoice);
+
+// Record payment on invoice - Admin
+router.post("/invoices/:id/payment", authProtect, billingController.recordPayment);
+
+// Download invoice as PDF
+router.get("/invoices/:id/pdf", anyAuth, billingController.downloadInvoicePdf);
+
+// ==================== PATIENT BILLING ====================
+
+// Get patient's pending invoices
+router.get("/patient/:patientId/pending", authProtect, billingController.getPatientPendingInvoices);
+
+export default router;

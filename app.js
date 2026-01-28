@@ -1,0 +1,58 @@
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import routes from './src/routes.js';
+import errorMiddleware from './src/middlewares/error.middleware.js';
+import { NotFoundError } from './src/utils/AppError.js';
+
+const app = express();
+
+// Security middleware
+app.use(helmet());
+
+// CORS configuration
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:5173', // Vite dev server
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    // Allow requests with no origin (mobile apps, Postman, etc.)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
+
+// Body parsing middleware
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Server is running',
+    timestamp: new Date().toISOString(),
+  });
+});
+
+// API routes
+app.use('/api', routes);
+
+// Handle 404 - Route not found
+app.use((req, res, next) => {
+  next(new NotFoundError(`Route ${req.originalUrl}`));
+});
+
+// Global error handler (must be last)
+app.use(errorMiddleware);
+
+export default app;

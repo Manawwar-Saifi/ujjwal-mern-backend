@@ -1,0 +1,38 @@
+{
+  "name": "ujjwal-dental-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Ujjwal Dental Clinic Management System",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node src/seeds/index.js"
+  },
+  "keywords": [
+    "dental",
+    "clinic",
+    "management",
+    "healthcare",
+    "api"
+  ],
+  "author": "Ujjwal Dental Clinic",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.9.0",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.19",
+    "dotenv": "^16.6.1",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.4",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.12",
+    "pdfkit": "^0.17.2",
+    "razorpay": "^2.9.6",
+    "uuid": "^13.0.0",
+    "zod": "^4.3.5"
+  }
+}
